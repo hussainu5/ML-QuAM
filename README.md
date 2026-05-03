@@ -1,4 +1,7 @@
-# Loan Repayment QuAM
+# Loan Repayment QuAM: Predicting Customer Defaults & Repayment Latency
+
+### Authors
+Junaid Yusuf (jyusuf) and Hussain Bin Usman (hussainu)
 
 ## Project Description
 
