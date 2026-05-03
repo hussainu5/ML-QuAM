@@ -49,12 +49,23 @@ Below is a summary of the steps required to use the interface:
 ## Program Features Guide
 
 ### Dataset Inputs
+The program allows for the uploading of two datasets, a lebelled training dataset and an unlabelled query dataset (optional). If a query dataset is loaded, inference will use that dataset. Otherwise it'll use the training dataset.
+
+The datasets are uploaded by pressing 'Browse' which allows the user to upload the file after which they must Load the dataset.
 
 ### Custom Parameter Configuration
 
+
 ### Model Training
+Based on the parameters and the model selected, the model will be trained after pressing the 'Train Model' button'
 
 ### Inference
+The user can enter a customer row index and generate an inference result (classification: predicted probability of delinquency for the customer; regression: predicted latency of repayment in months for the customer).
+
+For classification, there is a special feature through the 'Locate All Predicted Delinquencies' button, which prints all the customers that are classed as delinquent (predicted to default with a probability >= 0.5). It displays the indexes of all thsee customers as well as their  respective probabilities of delinquency.
+
+### Output Log
+Displays the program's outputs to the user as text within the output log so they can track it.
 
 
 ## Example Test Files
