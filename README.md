@@ -58,10 +58,21 @@ Below is a summary of the steps required to use the interface:
 
 
 ## Example Test Files
-The `quam_test_files` folder contains:
 
-- `Training1Small.csv` and `Query1Small.csv`
-- `Training2Medium.csv` and `Query2Medium.csv`
-- `Training3Large.csv` and `Query3Large.csv`
-- `Training4Balanced.csv` and `Query4Balanced.csv`
-- `Training5FullDemo.csv` and `Query5FullDemo.csv`
+### Overview
+We prepared example input files for testing and demonstrating the final Loan Repayment QuAM interface. The files are generated from the final filtered Mexico dataset used throughout the project, so they stay consistent with the modelling work completed earlier. For each test case, a labelled training file and a separate unlabelled query file are created. The training file keeps the target columns needed to train the classification and regression models, while the paired query file does not include the labels by dropping the targets to imitate new customer records requiring inference. The training and query records in each pair are kept non-overlapping so that the interface is tested on unseen customer data rather than rows it has already trained on.
+
+### Test Files Breakdown
+Here is a breakdown of the example training and query files in `quam_test_files/:
+
+- `Training1Small.csv` / `Query1Small.csv`: Small files for quick testing. The training file has **500 rows**, and the query file has **20 rows**.
+
+- `Training2Medium.csv` / `Query2Medium.csv`: Medium-sized files for a more realistic but still manageable demonstration. The training file has **1,500 rows**, and the query file has **50 rows**.
+
+- `Training3Large.csv` / `Query3Large.csv`: Larger files for testing the interface with more records. The training file has **3,000 rows**, and the query file has **100 rows**.
+
+- `Training4Balanced.csv` / `Query4Balanced.csv`: Files designed to give the classification model a more balanced mix of delinquent and non-delinquent cases during training. The training file has **1,200 rows**, and the query file has **50 rows**.
+
+- `Training5FullDemo.csv` / `Query5FullDemo.csv`: The largest demo files, used to test the interface in a fuller and more realistic setting. The training file has **5,000 rows**, and the query file has **150 rows**.
+
+Each training file keeps the target columns needed for model training, while each paired query file removes target and leakage columns to imitate new customer records for inference.
