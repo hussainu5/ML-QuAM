@@ -55,6 +55,25 @@ The datasets are uploaded by pressing 'Browse' which allows the user to upload t
 
 ### Custom Parameter Configuration
 
+The custom parameter configuration section allows the user to choose the prediction task and adjust important model settings before training.
+
+#### General parameters:
+- `Prediction task`: chooses whether the program runs classification or regression.
+- `Random seed`: controls reproducibility. Keeping the same seed helps produce the same train/evaluation split and results when the same data is used. Set as 15288 as a default.
+- `Evaluation split size`: controls how much of the labelled training dataset is held out for evaluation when training the model. For example, `0.2` means 20% is used for evaluation and 80% is used for training.
+
+#### Classification parameters:
+- `Regularization parameter (C)`: controls how strongly the Kernel SVM penalizes classification mistakes. Larger values make the model fit the training data more strictly, while smaller values allow more flexibility.
+- `Kernel influence (gamma)`: controls how much influence each training point has in the RBF kernel. The available options are `scale`, `auto`, and `fixed`.
+- `Fixed gamma value`: appears only when `fixed` is selected for gamma. It allows the user to manually enter a positive gamma value.
+- `Class balance weighting`: controls whether the model adjusts for class imbalance. `Balance classes (balanced)` gives more weight to underrepresented classes, while `Do not balance (none)` treats the classes equally.
+
+#### Regression parameters:
+- `Tree depth limit`: controls the maximum depth of the Decision Tree Regressor. Larger values allow a more complex tree, while smaller values keep the model simpler.
+- `Minimum records per leaf`: controls the minimum number of records required in each final leaf of the decision tree. Larger values make the model smoother and help reduce overfitting to very small groups.
+
+The interface checks all parameter inputs before training and shows an error message if an invalid value is entered.
+
 
 ### Model Training
 Based on the parameters and the model selected, the model will be trained after pressing the 'Train Model' button'
